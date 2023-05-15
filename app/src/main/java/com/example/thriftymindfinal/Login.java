@@ -69,7 +69,10 @@ public class Login extends AppCompatActivity {
             Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Login.this, GetStarted.class);
             startActivity(intent);
-        } else {
+        } else if(inputUsername.isEmpty() || inputPassword.isEmpty()) {
+            Toast.makeText(context, "Please fill in all the fields needed", Toast.LENGTH_SHORT).show();
+        }
+        else {
             // Credentials do not match, show an error message
             Toast.makeText(context, "Invalid username or password", Toast.LENGTH_SHORT).show();
         }
