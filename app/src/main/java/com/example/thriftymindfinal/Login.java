@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
             // Credentials match, proceed with login
             // Add your login logic here
             Toast.makeText(context, "Login successful!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Login.this, Dashboard.class);
+            Intent intent = new Intent(Login.this, GetStarted.class);
             startActivity(intent);
         } else {
             // Credentials do not match, show an error message
