@@ -14,6 +14,7 @@
     <color name="gradient_start">#213232</color>
     <color name="gradient_end">#005B60</color>
 
+
     <drawable name="cardview_background">
         <shape xmlns:android="http://schemas.android.com/apk/res/android">
             <gradient
