@@ -2,6 +2,7 @@ package com.example.thriftymindfinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ public class GetStarted extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(GetStarted.this, Dashboard.class);
+                Intent intent = new Intent(GetStarted.this, Prompt.class);
                 startActivity(intent);
             }
         });
