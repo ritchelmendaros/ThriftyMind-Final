@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data>
+    <username>johndoe</username>
+    <password>johndoe</password>
     <username>rtchlmndrs</username>
     <password>123456</password>
+    <username>jingbeifong</username>
+    <password>jing</password>
 </data>
