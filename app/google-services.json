@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "682473672812",
+    "project_id": "dbthriftymind",
+    "storage_bucket": "dbthriftymind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682473672812:android:65a66ce8fd3937a822c849",
+        "android_client_info": {
+          "package_name": "com.example.thriftymindfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682473672812-b5vb6ddsk616smkhab43e8ffu65mtkmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.thriftymindfinal",
+            "certificate_hash": "6f3aa7b03833bd18b036f40f756f1eef556f2199"
+          }
+        },
+        {
+          "client_id": "682473672812-j47cam26s2l3cn98vmljl686l3kssojv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7hoCM5nlyeZZMDOXQjVC8wzDKKgmq2Fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682473672812-j47cam26s2l3cn98vmljl686l3kssojv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
