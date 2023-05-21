@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_navbar">#1F2423</color>
+    <color name="background_hover">#181919</color>
+    <color name="icon_color_nav">#CBE4DE</color>
+    <color name ="icon_color_notselected">#5F5F5F</color>
+
+
+</resources>

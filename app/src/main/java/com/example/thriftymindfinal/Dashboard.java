@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,6 +34,27 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_dashboard);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()){
+                case R.id.bottom_dashboard:
+                    return true;
+                case R.id.bottom_barter:
+                    startActivity(new Intent(getApplicationContext(), Marketplace.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_chat:
+                    startActivity(new Intent(getApplicationContext(), Chat.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+
         List<String> items = new LinkedList<>();
         items.add("Transportation");
 
@@ -50,6 +73,7 @@ public class Dashboard extends AppCompatActivity {
         // Show the tip/notification dialog
         showTipDialog();
     }
+
 
     private void showTipDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogTheme);
