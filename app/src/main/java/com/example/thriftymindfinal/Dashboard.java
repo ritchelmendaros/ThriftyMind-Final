@@ -20,11 +20,19 @@ import java.util.List;
 public class Dashboard extends AppCompatActivity {
     String[] goal_data = {"Food", "Allowance", "Projects"};
     int count = 0;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        button = (Button) findViewById(R.id.btnSaving);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, Savings.class);
+                startActivity(intent);
+            }
+        });
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.bottom_dashboard);
@@ -86,4 +94,3 @@ public class Dashboard extends AppCompatActivity {
     }
 
 }
-

@@ -48,13 +48,13 @@
             android:gravity="top"
             android:letterSpacing="0.01"
             android:lineHeight="8dp"
-            android:text="Budget"
+            android:text="Savings"
             android:textColor="#CBE4DE"
             android:textSize="10sp"
             android:textStyle="normal" />
 
         <Button
-            android:id="@+id/btnSaving"
+            android:id="@+id/btnExpenses"
             android:layout_width="119dp"
             android:layout_height="34dp"
             android:layout_marginStart="-200dp"
@@ -62,7 +62,7 @@
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="662dp"
             android:background="@drawable/textbackground"
-            android:text="Savings"
+            android:text="Expenses"
             android:textSize="12dp"
             app:backgroundTint="@color/border"
             app:layout_constraintBottom_toBottomOf="parent"
