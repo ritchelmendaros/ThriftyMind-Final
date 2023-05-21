@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +18,19 @@ import java.util.List;
 public class Dashboard extends AppCompatActivity {
     String[] goal_data = {"Food", "Allowance", "Projects"};
     int count = 0;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        button = (Button) findViewById(R.id.btnSaving);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, Savings.class);
+                startActivity(intent);
+            }
+        });
 
         List<String> items = new LinkedList<>();
         items.add("Transportation");
@@ -61,4 +70,3 @@ public class Dashboard extends AppCompatActivity {
     }
 
 }
-
