@@ -48,7 +48,7 @@
             android:gravity="top"
             android:letterSpacing="0.01"
             android:lineHeight="8dp"
-            android:text="Monthly Budget"
+            android:text="Budget"
             android:textColor="#CBE4DE"
             android:textSize="10sp"
             android:textStyle="normal" />
