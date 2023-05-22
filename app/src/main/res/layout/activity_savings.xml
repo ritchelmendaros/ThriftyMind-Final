@@ -20,12 +20,106 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <include
-            layout="@layout/expensesheader"
-            android:layout_width="393dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginBottom="5dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="55dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/user" />
+
+            <EditText
+                android:id="@+id/txtUser"
+                android:layout_width="117dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="211dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/archivo"
+                android:fontStyle="normal"
+                android:letterSpacing="-0.01"
+                android:text="Hello, John!"
+                android:textColor="#CBE4DE"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="89dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="-325dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="239dp"
+                android:layout_marginBottom="662dp"
+                android:fontFamily="@font/archivo"
+                android:gravity="top"
+                android:letterSpacing="0.01"
+                android:lineHeight="8dp"
+                android:text="Savings"
+                android:textColor="#CBE4DE"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btnExpenses"
+                android:layout_width="119dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="-200dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="662dp"
+                android:background="@drawable/textbackground"
+                android:text="Expenses"
+                android:textSize="12dp"
+                app:backgroundTint="@color/border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnGoal"
+                android:layout_width="119dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="-168dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="662dp"
+                android:background="@drawable/textbackground"
+                android:text="Goal"
+                android:textSize="12dp"
+                app:backgroundTint="@color/border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="36dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="-45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="660dp"
+                android:foreground="@drawable/bellicon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.986"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -53,8 +147,8 @@
             android:textSize="15sp"
             android:textStyle="normal" />
 
-        <TextView
-            android:id="@+id/textView5"
+        <EditText
+            android:id="@+id/txtallsavedmoney"
             android:layout_width="255dp"
             android:layout_height="79dp"
             android:layout_marginStart="-435dp"
@@ -63,10 +157,10 @@
             android:layout_marginBottom="500dp"
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif"
-            android:gravity="top"
             android:letterSpacing="-0.01"
             android:lineHeight="51dp"
-            android:text="₱ 5,000.00"
+            android:textAlignment="center"
+            android:text=""
             android:textColor="#CBE4DE"
             android:textSize="51sp"
             android:textStyle="bold" />
@@ -90,13 +184,13 @@
 
 
         <Button
-            android:id="@+id/btnAddGoals"
+            android:id="@+id/btnAddSavings"
             android:layout_width="167dp"
             android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="15dp"
             android:background="@drawable/textbackground"
-            android:text="Add Goals"
+            android:text="Add Savings"
             android:textSize="13dp"
             app:backgroundTint="@color/border"
             tools:ignore="MissingConstraints"
@@ -113,7 +207,7 @@
             android:fontFamily="@font/archivo"
             android:gravity="top"
             android:letterSpacing="-0.01"
-            android:text="My Goals"
+            android:text="My Savings"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -121,7 +215,7 @@
         />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/recyclerViewSavings"
             android:layout_width="match_parent"
             android:layout_height="385dp"
             tools:ignore="MissingConstraints"

@@ -54,8 +54,26 @@ public class Dashboard extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Dashboard.this, Savings.class);
-                startActivity(intent);
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Dashboard.this, Savings.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+        button = findViewById(R.id.btnGoal);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Dashboard.this, AddGoals.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
             }
         });
 

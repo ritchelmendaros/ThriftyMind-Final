@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".AddExpenses">
+    tools:context=".AddSavings">
 
 
     <LinearLayout
@@ -21,8 +21,8 @@
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="393dp"
-            android:layout_height="73dp"
+            android:layout_width="392dp"
+            android:layout_height="97dp"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,17 +47,17 @@
                 android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/archivo"
                 android:fontStyle="normal"
-                android:textStyle="bold"
                 android:letterSpacing="-0.01"
                 android:text="Hello, John!"
                 android:textColor="#CBE4DE"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="89dp"
                 android:layout_height="15dp"
-                android:layout_marginStart="-325dp"
+                android:layout_marginStart="-329dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="239dp"
                 android:layout_marginBottom="662dp"
@@ -65,21 +65,38 @@
                 android:gravity="top"
                 android:letterSpacing="0.01"
                 android:lineHeight="8dp"
-                android:text="Budget"
+                android:text="Savings"
                 android:textColor="#CBE4DE"
                 android:textSize="10sp"
                 android:textStyle="normal" />
 
             <Button
-                android:id="@+id/btnSaving"
+                android:id="@+id/btnGoal"
                 android:layout_width="119dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="-200dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginBottom="662dp"
                 android:background="@drawable/textbackground"
-                android:text="Savings"
+                android:text="Goals"
+                android:textSize="12dp"
+                app:backgroundTint="@color/border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnExpense"
+                android:layout_width="119dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="-168dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="662dp"
+                android:background="@drawable/textbackground"
+                android:text="Expenses"
                 android:textSize="12dp"
                 app:backgroundTint="@color/border"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -125,13 +142,13 @@
             android:fontFamily="@font/archivo"
             android:gravity="top"
             android:letterSpacing="-0.01"
-            android:text="Planned Expenses Budget"
+            android:text="Savings"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
             android:textStyle="normal" />
 
         <EditText
-            android:id="@+id/txtplannedbudget"
+            android:id="@+id/txtsavings"
             android:layout_width="255dp"
             android:layout_height="79dp"
             android:layout_marginStart="-435dp"
@@ -140,9 +157,9 @@
             android:layout_marginBottom="500dp"
             android:background="@android:color/transparent"
             android:fontFamily="sans-serif"
+            android:textAlignment = "center"
             android:letterSpacing="-0.01"
             android:lineHeight="51dp"
-            android:textAlignment="center"
             android:text=""
             android:textColor="#CBE4DE"
             android:textSize="51sp"
@@ -171,14 +188,14 @@
             android:id="@+id/textview15"
             android:layout_width="253dp"
             android:layout_height="20dp"
-            android:layout_marginStart="120dp"
+            android:layout_marginStart="140dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="257dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/archivo"
             android:gravity="top"
             android:letterSpacing="-0.01"
-            android:text="Expenses Information"
+            android:text="Savings Information"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -194,13 +211,13 @@
             android:fontFamily="@font/archivo"
             android:gravity="top"
             android:letterSpacing="-0.01"
-            android:text="Input Expenses"
+            android:text="Input Savings"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtNameofExpenses"
+            android:id="@+id/txtSavingsName"
             android:layout_width="324dp"
             android:layout_height="48dp"
             android:background="@drawable/textbackground"
@@ -227,13 +244,13 @@
             android:fontFamily="@font/archivo"
             android:gravity="top"
             android:letterSpacing="-0.01"
-            android:text="Input Alloted Budget"
+            android:text="Input Saved Money"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtAllotedBudget"
+            android:id="@+id/txtSavedMoney"
             android:layout_width="324dp"
             android:layout_height="48dp"
             android:background="@drawable/textbackground"
@@ -250,14 +267,14 @@
             android:textColorHint="#CBE4DE" />
 
         <Button
-            android:id="@+id/btnAddExpenses"
+            android:id="@+id/btnAddSavings"
             android:layout_width="167dp"
             android:layout_height="35dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="15dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/textbackground"
-            android:text="Add Expenses"
+            android:text="Add Savings"
             android:textSize="13dp"
             app:backgroundTint="@color/border"
             tools:ignore="MissingConstraints"
