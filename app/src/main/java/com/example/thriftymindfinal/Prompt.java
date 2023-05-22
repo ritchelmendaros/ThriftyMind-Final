@@ -19,8 +19,13 @@ public class Prompt extends AppCompatActivity {
         im.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Prompt.this, Dashboard.class);
-                startActivity(intent);
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Prompt.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
             }
         });
     }
