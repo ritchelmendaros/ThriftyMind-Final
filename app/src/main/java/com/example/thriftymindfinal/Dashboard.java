@@ -76,6 +76,8 @@ public class Dashboard extends AppCompatActivity {
         // Retrieve email value from the intent
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
+        EditText user = findViewById(R.id.txtUser);
+        user.setText("Hello " + email + "!");
 
         // Check if email is null
         if (email != null) {
@@ -87,13 +89,21 @@ public class Dashboard extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     expenses.clear();
+                    int totalBudget = 0; // Variable to store the sum of all budgets
+
                     for (DataSnapshot expenseSnapshot : dataSnapshot.getChildren()) {
                         Expense expense = expenseSnapshot.getValue(Expense.class);
                         if (expense != null) {
                             expenses.add(expense);
+                            totalBudget += expense.getBudget(); // Add the budget to the totalBudget
                         }
                     }
                     expenseAdapter.notifyDataSetChanged();
+
+                    // Set the text of the EditText to the sum of all budgets
+                    // Assuming you have an EditText with the id txtplannedbudget in your layout
+                    EditText plannedBudgetEditText = findViewById(R.id.txtbudget);
+                    plannedBudgetEditText.setText("₱ " + String.valueOf(totalBudget));
                 }
 
                 @Override
