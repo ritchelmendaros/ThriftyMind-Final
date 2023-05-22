@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -41,6 +42,8 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("TipPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -103,7 +106,9 @@ public class Dashboard extends AppCompatActivity {
                     // Set the text of the EditText to the sum of all budgets
                     // Assuming you have an EditText with the id txtplannedbudget in your layout
                     EditText plannedBudgetEditText = findViewById(R.id.txtbudget);
-                    plannedBudgetEditText.setText("₱ " + String.valueOf(totalBudget));
+                    DecimalFormat decimalFormat = new DecimalFormat("#0.00");
+                    String formattedTotalBudget = decimalFormat.format(totalBudget);
+                    plannedBudgetEditText.setText("₱ " + formattedTotalBudget);
                 }
 
                 @Override

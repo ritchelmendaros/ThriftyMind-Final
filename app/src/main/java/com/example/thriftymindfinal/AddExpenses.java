@@ -9,12 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AddExpenses extends AppCompatActivity {
     private DatabaseReference expensesDatabaseReference;
-    private EditText nameofexpenses, budget;
+    private EditText nameofexpenses, user, budget, displayexp;
 
 
     @Override
@@ -25,6 +28,11 @@ public class AddExpenses extends AppCompatActivity {
         // Retrieve email value from the intent
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
+        String plannedBudget = intent.getStringExtra("plannedbudget");
+        user = findViewById(R.id.txtUser);
+        user.setText("Hello " + email + "!");
+        displayexp = findViewById(R.id.txtplannedbudget);
+        displayexp.setText(plannedBudget);
 
         // Construct expenses database reference
         expensesDatabaseReference = FirebaseDatabase.getInstance().getReference().child("expenses").child(email);
@@ -55,10 +63,33 @@ public class AddExpenses extends AppCompatActivity {
                     clearFields();
                     Intent promptIntent = new Intent(AddExpenses.this, Dashboard.class);
                     promptIntent.putExtra("email", email);
-                    promptIntent.putExtra("budget", Double.parseDouble(budgetValue));
+                    promptIntent.putExtra("plannedbudget", plannedBudget);
                     startActivity(promptIntent);
                     finish();
                 }
+            }
+        });
+
+        // Retrieve expense records from the database and calculate the total budget
+        expensesDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                double totalBudget = 0.0;
+
+                for (DataSnapshot expenseSnapshot : dataSnapshot.getChildren()) {
+                    Expense expense = expenseSnapshot.getValue(Expense.class);
+                    if (expense != null) {
+                        totalBudget += expense.getBudget(); // Add the budget to the totalBudget
+                    }
+                }
+
+                String formattedBudget = String.format("%.2f", totalBudget); // Format the total budget with two decimal places
+                displayexp.setText("₱ " + formattedBudget);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(AddExpenses.this, "Failed to retrieve expenses", Toast.LENGTH_SHORT).show();
             }
         });
     }
