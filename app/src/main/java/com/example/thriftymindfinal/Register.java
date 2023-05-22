@@ -18,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
-
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://dbthriftymind-default-rtdb.firebaseio.com/");
 
     @Override
@@ -40,37 +39,41 @@ public class Register extends AppCompatActivity {
                 final String lnametxt = lname.getText().toString();
                 final String passtxt = pass.getText().toString();
 
-                if(fnametxt.isEmpty() || emailtxt.isEmpty() || lnametxt.isEmpty() || passtxt.isEmpty()) {
+                if (fnametxt.isEmpty() || emailtxt.isEmpty() || lnametxt.isEmpty() || passtxt.isEmpty()) {
                     Toast.makeText(Register.this, "Data is required.", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
 
                     databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChild(emailtxt)){
+                            if (snapshot.hasChild(emailtxt)) {
                                 Toast.makeText(Register.this, "Email is already registered.", Toast.LENGTH_SHORT).show();
-                            }
-                            else{
+                            } else {
+                                // Store the user information in the "users" table
                                 databaseReference.child("users").child(emailtxt).child("fullname").setValue(fnametxt);
                                 databaseReference.child("users").child(emailtxt).child("email").setValue(emailtxt);
                                 databaseReference.child("users").child(emailtxt).child("lastname").setValue(lnametxt);
                                 databaseReference.child("users").child(emailtxt).child("password").setValue(passtxt);
 
-                                Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                                finish();
+                                // Create a default budget for the user in the "budget" table
+                                Budget budget = new Budget(emailtxt, 5000.00);
+                                databaseReference.child("budget").child(emailtxt).setValue(budget);
 
+                                Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(Register.this, Login.class);
+                                intent.putExtra("email", emailtxt);
+                                startActivity(intent);
+                                finish();
                             }
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
+                            // Handle the cancellation
                         }
                     });
-
                 }
-
             }
         });
 
@@ -85,3 +88,4 @@ public class Register extends AppCompatActivity {
         });
     }
 }
+
