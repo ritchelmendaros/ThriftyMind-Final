@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/user" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/txtUser"
             android:layout_width="117dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"

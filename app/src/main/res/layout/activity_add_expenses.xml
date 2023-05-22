@@ -54,7 +54,7 @@
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txtplannedbudget"
             android:layout_width="255dp"
             android:layout_height="79dp"
             android:layout_marginStart="-435dp"
