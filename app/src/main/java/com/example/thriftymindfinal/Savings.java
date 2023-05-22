@@ -21,5 +21,13 @@ public class Savings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button = (Button) findViewById(R.id.btnAddGoals);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Savings.this, AddGoals.class);
+                startActivity(intent);
+            }
+        });
     }
 }
