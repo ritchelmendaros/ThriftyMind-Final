@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints">
 
         <include
-            layout="@layout/expensesheader"
+            layout="@layout/header"
             android:layout_width="393dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
@@ -129,7 +129,7 @@
             android:background="@drawable/textbackground"
             android:ems="10"
             android:fontFamily="@font/inter"
-            android:hint="Input Your Goal"
+            android:hint="Input a Goal"
             android:layout_gravity="center_horizontal"
             android:inputType="textPersonName"
             android:paddingStart="8dp"
@@ -157,13 +157,13 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/txtNeededGoalBudget"
+            android:id="@+id/txtAllotedGoal"
             android:layout_width="324dp"
             android:layout_height="48dp"
             android:background="@drawable/textbackground"
             android:ems="10"
             android:fontFamily="@font/inter"
-            android:hint="Input Your Needed Budget"
+            android:hint="Input Budget for Goal"
             android:textSize="15dp"
             android:layout_gravity="center_horizontal"
             android:inputType="textPersonName"
