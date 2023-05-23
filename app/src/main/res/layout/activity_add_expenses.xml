@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout12"
-        android:layout_width="395dp"
-        android:layout_height="95dp"
+        android:layout_width="394dp"
+        android:layout_height="93dp"
         android:layout_marginTop="1dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout14"
@@ -21,8 +21,8 @@
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="393dp"
-            android:layout_height="73dp"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
             android:layout_marginTop="16dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,11 +47,11 @@
                 android:backgroundTint="@android:color/transparent"
                 android:fontFamily="@font/archivo"
                 android:fontStyle="normal"
-                android:textStyle="bold"
                 android:letterSpacing="-0.01"
                 android:text="Hello, John!"
                 android:textColor="#CBE4DE"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -65,7 +65,7 @@
                 android:gravity="top"
                 android:letterSpacing="0.01"
                 android:lineHeight="8dp"
-                android:text="Budget"
+                android:text="Expenses"
                 android:textColor="#CBE4DE"
                 android:textSize="10sp"
                 android:textStyle="normal" />
@@ -75,11 +75,28 @@
                 android:layout_width="119dp"
                 android:layout_height="34dp"
                 android:layout_marginStart="-200dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginBottom="662dp"
                 android:background="@drawable/textbackground"
                 android:text="Savings"
+                android:textSize="12dp"
+                app:backgroundTint="@color/border"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnGoals"
+                android:layout_width="119dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="-168dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="662dp"
+                android:background="@drawable/textbackground"
+                android:text="Goals"
                 android:textSize="12dp"
                 app:backgroundTint="@color/border"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -92,7 +109,7 @@
                 android:layout_width="36dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="-45dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="660dp"
                 android:foreground="@drawable/bellicon"

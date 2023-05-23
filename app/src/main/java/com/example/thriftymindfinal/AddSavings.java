@@ -21,41 +21,11 @@ public class AddSavings extends AppCompatActivity {
     private DatabaseReference savingsDatabaseReference;
     private EditText savingsNameEditText, savedMoneyEditText, totalSavedMoneyEditText;
     private String email, plannedBudget;
-    private Button button;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_savings);
-
-        button = findViewById(R.id.btnGoal);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = getIntent();
-                String email = intent.getStringExtra("email");
-
-                Intent promptIntent = new Intent(AddSavings.this, AddGoals.class);
-                promptIntent.putExtra("email", email);
-                startActivity(promptIntent);
-                finish();
-            }
-        });
-
-        button = findViewById(R.id.btnExpense);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = getIntent();
-                String email = intent.getStringExtra("email");
-
-                Intent promptIntent = new Intent(AddSavings.this, Dashboard.class);
-                promptIntent.putExtra("email", email);
-                startActivity(promptIntent);
-                finish();
-            }
-        });
 
         // Retrieve email and planned budget values from the intent
         Intent intent = getIntent();
