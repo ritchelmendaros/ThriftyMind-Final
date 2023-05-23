@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +28,7 @@ public class AddGoals extends AppCompatActivity {
     private RecyclerView recyclerView;
     private GoalsAdapter goalsAdapter;
     private List<HashMap<String, Object>> goalsList;
+    private String userEmail;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -43,9 +45,9 @@ public class AddGoals extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String email = intent.getStringExtra("email");
+        userEmail = intent.getStringExtra("email");
         EditText user = findViewById(R.id.txtUser);
-        user.setText("Hello " + email + "!");
+        user.setText("Hello " + userEmail + "!");
 
         recyclerView = findViewById(R.id.recyclerViewGoals);
         goalsList = new ArrayList<>();
@@ -57,7 +59,8 @@ public class AddGoals extends AppCompatActivity {
 
         // Construct goal database reference
         goalDatabaseReference = FirebaseDatabase.getInstance().getReference().child("goal");
-        goalDatabaseReference.addValueEventListener(new ValueEventListener() {
+        Query query = goalDatabaseReference.orderByChild("email").equalTo(userEmail);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 goalsList.clear();
@@ -82,13 +85,10 @@ public class AddGoals extends AppCompatActivity {
         String goalName = goalNameEditText.getText().toString().trim();
 
         if (!goalName.isEmpty()) {
-            Intent intent = getIntent();
-            String email = intent.getStringExtra("email");
-
             String goalKey = goalDatabaseReference.push().getKey();
 
             Map<String, Object> goalMap = new HashMap<>();
-            goalMap.put("email", email);
+            goalMap.put("email", userEmail);
             goalMap.put("goalName", goalName);
 
             goalDatabaseReference.child(goalKey).setValue(goalMap);
@@ -101,3 +101,4 @@ public class AddGoals extends AppCompatActivity {
         }
     }
 }
+
