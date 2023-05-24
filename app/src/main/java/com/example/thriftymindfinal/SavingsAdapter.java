@@ -28,7 +28,8 @@ public class SavingsAdapter extends RecyclerView.Adapter<SavingsAdapter.SavingsV
 
     @Override
     public void onBindViewHolder(@NonNull SavingsViewHolder holder, int position) {
-        HashMap<String, Object> savings = savingsList.get(position);
+        int reversedPosition = savingsList.size() - position - 1;
+        HashMap<String, Object> savings = savingsList.get(reversedPosition);
         String savingsName = (String) savings.get("savingsName");
 
         // Get the savedMoney value and convert it to a double
@@ -61,5 +62,3 @@ public class SavingsAdapter extends RecyclerView.Adapter<SavingsAdapter.SavingsV
         }
     }
 }
-
-

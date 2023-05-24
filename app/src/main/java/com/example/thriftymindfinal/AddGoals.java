@@ -158,6 +158,7 @@ public class AddGoals extends AppCompatActivity {
             goalDatabaseReference.child(goalKey).setValue(goalMap);
 
             Toast.makeText(AddGoals.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+            goalNameEditText.setText("");
         } else {
             // Goal name is empty, show an error message
             goalNameEditText.setError("Please enter a goal name");

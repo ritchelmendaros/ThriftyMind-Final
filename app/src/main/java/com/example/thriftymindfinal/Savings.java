@@ -30,7 +30,7 @@ public class Savings extends AppCompatActivity {
     private SavingsAdapter savingsAdapter;
     private List<HashMap<String, Object>> savingsList;
     private TextView txtAllSavedMoney;
-    private ImageView userProfile, home, marketplace, savings;
+    private ImageView userProfile, home, marketplace, savings, logout;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -137,6 +137,16 @@ public class Savings extends AppCompatActivity {
                 Intent promptIntent = new Intent(Savings.this, AddSavings.class);
                 promptIntent.putExtra("email", email);
                 startActivity(promptIntent);
+                finish();
+            }
+        });
+
+        logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Savings.this, Login.class);
+                startActivity(intent);
                 finish();
             }
         });

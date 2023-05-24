@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -34,7 +35,8 @@ class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        HashMap<String, Object> goal = goalsList.get(position);
+        int reversedPosition = goalsList.size() - position - 1;
+        HashMap<String, Object> goal = goalsList.get(reversedPosition);
 
         // Set goal name to TextView
         String goalName = (String) goal.get("goalName");
@@ -45,5 +47,9 @@ class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> {
     public int getItemCount() {
         return goalsList.size();
     }
-}
 
+    public void addGoal(HashMap<String, Object> goal) {
+        goalsList.add(0, goal); // Add the new goal at the beginning of the list
+        notifyItemInserted(0); // Notify the adapter about the new item at position 0
+    }
+}
