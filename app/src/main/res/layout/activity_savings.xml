@@ -51,7 +51,8 @@
                 android:text="Hello, John!"
                 android:textColor="#CBE4DE"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -85,7 +86,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/btnGoal"
@@ -102,7 +104,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -149,9 +152,9 @@
 
         <EditText
             android:id="@+id/txtallsavedmoney"
-            android:layout_width="255dp"
-            android:layout_height="79dp"
-            android:layout_marginStart="-435dp"
+            android:layout_width="378dp"
+            android:layout_height="113dp"
+            android:layout_marginStart="-510dp"
             android:layout_marginTop="90dp"
             android:layout_marginEnd="73dp"
             android:layout_marginBottom="500dp"
@@ -159,18 +162,19 @@
             android:fontFamily="sans-serif"
             android:letterSpacing="-0.01"
             android:lineHeight="51dp"
-            android:textAlignment="center"
             android:text=""
+            android:textAlignment="center"
             android:textColor="#CBE4DE"
-            android:textSize="51sp"
-            android:textStyle="bold" />
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout15"
-        android:layout_width="398dp"
-        android:layout_height="560dp"
+        android:layout_width="399dp"
+        android:layout_height="478dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="1dp"
         android:orientation="vertical"
@@ -180,7 +184,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout14"
-        tools:ignore="MissingConstraints">
+        tools:ignore="ExtraText,MissingConstraints">
 
 
         <Button
@@ -193,7 +197,7 @@
             android:text="Add Savings"
             android:textSize="13dp"
             app:backgroundTint="@color/border"
-            tools:ignore="MissingConstraints"
+            tools:ignore="MissingConstraints,TextSizeCheck,TouchTargetSizeCheck"
             tools:layout_editor_absoluteY="295dp" />
 
         <TextView
