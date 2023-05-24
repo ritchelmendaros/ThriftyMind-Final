@@ -220,18 +220,18 @@
             android:id="@+id/txtNameofExpenses"
             android:layout_width="324dp"
             android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
             android:background="@drawable/textbackground"
             android:ems="10"
             android:fontFamily="@font/inter"
-            android:layout_gravity="center_horizontal"
             android:inputType="textPersonName"
             android:paddingStart="8dp"
             android:paddingTop="0dp"
             android:paddingEnd="8dp"
-            android:textSize="15dp"
             android:paddingBottom="4dp"
             android:textColor="@color/white"
-            android:textColorHint="#CBE4DE" />
+            android:textColorHint="#CBE4DE"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/textview14"

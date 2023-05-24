@@ -7,7 +7,7 @@
     app:cardBackgroundColor="@color/btnColor"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
-    app:contentPadding="10dp">
+    app:contentPadding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/expenses"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/archivo"
@@ -28,11 +28,11 @@
             android:text="Expense"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/budget"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/archivo"
@@ -42,18 +42,8 @@
             android:text="Budget"
             android:textColor="#CBE4DE"
             android:textSize="15sp"
-            android:textStyle="normal" />
+            android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnRemoveExpenses"
-            android:layout_width="130dp"
-            android:layout_height="38dp"
-            android:background="@drawable/textbackground"
-            android:text="Remove"
-            android:textSize="13dp"
-            app:backgroundTint="@color/border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 

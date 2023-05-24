@@ -33,15 +33,15 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
         Expense expense = expenses.get(position);
         holder.nameTextView.setText(expense.getName());
         holder.budgetTextView.setText(String.valueOf(expense.getBudget()));
-        holder.btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Pass the position to the onExpenseRemoveClick method in the Dashboard activity
-                if (expenseClickListener != null) {
-                    expenseClickListener.onExpenseRemoveClick(position);
-                }
-            }
-        });
+//        holder.btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                // Pass the position to the onExpenseRemoveClick method in the Dashboard activity
+//                if (expenseClickListener != null) {
+//                    expenseClickListener.onExpenseRemoveClick(position);
+//                }
+//            }
+//        });
     }
 
 
@@ -67,17 +67,17 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
             super(itemView);
             nameTextView = itemView.findViewById(R.id.expenses);
             budgetTextView = itemView.findViewById(R.id.budget);
-            btnRemoveExpenses = itemView.findViewById(R.id.btnRemoveExpenses);
-
-            btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION && expenseClickListener != null) {
-                        expenseClickListener.onExpenseRemoveClick(position);
-                    }
-                }
-            });
+//            btnRemoveExpenses = itemView.findViewById(R.id.btnRemoveExpenses);
+//
+//            btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    int position = getAdapterPosition();
+//                    if (position != RecyclerView.NO_POSITION && expenseClickListener != null) {
+//                        expenseClickListener.onExpenseRemoveClick(position);
+//                    }
+//                }
+//            });
         }
     }
 }

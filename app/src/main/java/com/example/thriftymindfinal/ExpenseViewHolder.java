@@ -16,7 +16,7 @@ public class ExpenseViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         nameTextView = itemView.findViewById(R.id.expenses);
         budgetTextView = itemView.findViewById(R.id.budget);
-        btnRemoveExpenses = itemView.findViewById(R.id.btnRemoveExpenses);
+        //btnRemoveExpenses = itemView.findViewById(R.id.btnRemoveExpenses);
 
         btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
             @Override
