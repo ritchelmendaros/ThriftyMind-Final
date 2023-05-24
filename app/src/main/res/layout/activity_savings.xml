@@ -105,14 +105,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/logout"
                 android:layout_width="36dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="-45dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="660dp"
-                android:foreground="@drawable/bellicon"
+                android:foreground="@drawable/logout"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.986"

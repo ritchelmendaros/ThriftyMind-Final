@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,7 @@ public class Dashboard extends AppCompatActivity {
     private List<Expense> expenses;
     private Button button;
     private EditText plannedbudget;
-    private ImageView userProfile, home, marketplace, savings;
+    private ImageView userProfile, home, marketplace, savings, logout;
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
@@ -47,8 +48,8 @@ public class Dashboard extends AppCompatActivity {
 
 
 
-        SharedPreferences sharedPreferences = getSharedPreferences("TipPrefs", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences sharedPreferences1 = getSharedPreferences("TipPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences1.edit();
         editor.putBoolean("isTipShown", false);
         editor.apply();
 
@@ -75,6 +76,15 @@ public class Dashboard extends AppCompatActivity {
                 Intent promptIntent = new Intent(Dashboard.this, Dashboard.class);
                 promptIntent.putExtra("email", email);
                 startActivity(promptIntent);
+                finish();
+            }
+        });
+        logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this, Login.class);
+                startActivity(intent);
                 finish();
             }
         });

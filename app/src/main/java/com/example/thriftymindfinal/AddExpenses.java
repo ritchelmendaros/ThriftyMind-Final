@@ -92,6 +92,16 @@ public class AddExpenses extends AppCompatActivity {
             }
         });
 
+        ImageView logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddExpenses.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         button = (Button) findViewById(R.id.btnGoals);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

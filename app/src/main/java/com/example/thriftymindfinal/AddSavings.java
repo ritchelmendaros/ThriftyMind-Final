@@ -104,6 +104,16 @@ public class AddSavings extends AppCompatActivity {
             }
         });
 
+        ImageView logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddSavings.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         // Construct savings database reference
         savingsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("savings").child(email);
 

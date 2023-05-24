@@ -77,6 +77,15 @@ public class AddGoals extends AppCompatActivity {
                 finish();
             }
         });
+        ImageView logout = (ImageView) findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddGoals.this, Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 //        marketplace = (ImageView) findViewById(R.id.Market);
 //        marketplace.setOnClickListener(new View.OnClickListener() {
 //            @Override
