@@ -32,7 +32,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ExpenseV
     public void onBindViewHolder(@NonNull ExpenseViewHolder holder, int position) {
         Expense expense = expenses.get(position);
         holder.nameTextView.setText(expense.getName());
-        holder.budgetTextView.setText(String.valueOf(expense.getBudget()));
+        holder.budgetTextView.setText("₱" + String.format("%.2f", expense.getBudget()));
 //        holder.btnRemoveExpenses.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

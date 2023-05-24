@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +30,7 @@ public class AddGoals extends AppCompatActivity {
     private GoalsAdapter goalsAdapter;
     private List<HashMap<String, Object>> goalsList;
     private String userEmail;
+    private ImageView userProfile, home, marketplace, savings;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -48,6 +50,59 @@ public class AddGoals extends AppCompatActivity {
         userEmail = intent.getStringExtra("email");
         EditText user = findViewById(R.id.txtUser);
         user.setText("Hello " + userEmail + "!");
+
+        home = (ImageView) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddGoals.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+        userProfile = (ImageView) findViewById(R.id.userprofile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddGoals.this, UserProfile.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+//        marketplace = (ImageView) findViewById(R.id.Market);
+//        marketplace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(Dashboard.this, Marketplace.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
+        savings = (ImageView) findViewById(R.id.Savings);
+        savings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddGoals.this, Savings.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerViewGoals);
         goalsList = new ArrayList<>();

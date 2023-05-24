@@ -46,6 +46,20 @@ public class Savings extends AppCompatActivity {
         String email = intent.getStringExtra("email");
         user.setText("Hello " + email + "!");
 
+        userProfile = (ImageView) findViewById(R.id.userprofile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Savings.this, UserProfile.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+
 //        button = (Button) findViewById(R.id.btnExpenses);
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override

@@ -41,10 +41,10 @@ class DemoVH extends RecyclerView.ViewHolder {
     public DemoVH(@NonNull View itemView) {
         super(itemView);
         textview = (TextView) itemView.findViewById(R.id.goals);
-        itemView.findViewById(R.id.btnRemoveGoal).setOnClickListener(view -> {
-            goalsdata.items.remove(getAdapterPosition());
-            goalsdata.notifyItemRemoved(getAdapterPosition());
-        });
+////        itemView.findViewById(R.id.btnRemoveGoal).setOnClickListener(view -> {
+//            goalsdata.items.remove(getAdapterPosition());
+//            goalsdata.notifyItemRemoved(getAdapterPosition());
+//        });
     }
     public DemoVH GoalsData(Goals goaldata) {
         this.goalsdata = goaldata;

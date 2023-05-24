@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/getstarted_back"
     tools:context=".AddGoals">
 
 
@@ -12,12 +12,11 @@
         android:id="@+id/linearLayout12"
         android:layout_width="395dp"
         android:layout_height="95dp"
-        android:layout_marginTop="1dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/userprofile"
                 android:layout_width="55dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="25dp"
@@ -69,46 +68,46 @@
                 android:textSize="10sp"
                 android:textStyle="normal" />
 
-            <Button
-                android:id="@+id/btnSaving"
-                android:layout_width="119dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="-200dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="662dp"
-                android:background="@drawable/textbackground"
-                android:text="Savings"
-                android:textSize="12dp"
-                app:backgroundTint="@color/border"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!--            <Button-->
+            <!--                android:id="@+id/btnSaving"-->
+            <!--                android:layout_width="119dp"-->
+            <!--                android:layout_height="34dp"-->
+            <!--                android:layout_marginStart="-200dp"-->
+            <!--                android:layout_marginTop="0dp"-->
+            <!--                android:layout_marginEnd="48dp"-->
+            <!--                android:layout_marginBottom="662dp"-->
+            <!--                android:background="@drawable/textbackground"-->
+            <!--                android:text="Savings"-->
+            <!--                android:textSize="12dp"-->
+            <!--                app:backgroundTint="@color/border"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-            <Button
-                android:id="@+id/btnExpense"
-                android:layout_width="119dp"
-                android:layout_height="34dp"
-                android:layout_marginStart="-168dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="662dp"
-                android:background="@drawable/textbackground"
-                android:text="Expenses"
-                android:textSize="12dp"
-                app:backgroundTint="@color/border"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <!--            <Button-->
+            <!--                android:id="@+id/btnExpense"-->
+            <!--                android:layout_width="119dp"-->
+            <!--                android:layout_height="34dp"-->
+            <!--                android:layout_marginStart="-168dp"-->
+            <!--                android:layout_marginTop="40dp"-->
+            <!--                android:layout_marginEnd="48dp"-->
+            <!--                android:layout_marginBottom="662dp"-->
+            <!--                android:background="@drawable/textbackground"-->
+            <!--                android:text="Expenses"-->
+            <!--                android:textSize="12dp"-->
+            <!--                app:backgroundTint="@color/border"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="36dp"
                 android:layout_height="33dp"
-                android:layout_marginStart="-45dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="-80dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="660dp"
                 android:foreground="@drawable/bellicon"
@@ -123,25 +122,25 @@
 
     <LinearLayout
         android:id="@+id/linearLayout15"
-        android:layout_width="393dp"
-        android:layout_height="262dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginBottom="7dp"
+        android:layout_width="382dp"
+        android:layout_height="226dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         android:padding="10dp"
         app:circularflow_defaultRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
         <TextView
             android:id="@+id/textview15"
             android:layout_width="253dp"
             android:layout_height="20dp"
             android:layout_marginStart="140dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="257dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/archivo"
@@ -157,7 +156,7 @@
             android:layout_width="164dp"
             android:layout_height="20dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="257dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/archivo"
@@ -197,25 +196,20 @@
             android:text="Add Goal"
             android:textSize="13dp"
             app:backgroundTint="@color/border"
-            tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="295dp" />
-
-        />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout16"
-        android:layout_width="393dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="1dp"
+        android:layout_width="389dp"
+        android:layout_height="469dp"
         android:orientation="vertical"
         android:padding="10dp"
         app:circularflow_defaultRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
 
 
         <TextView
@@ -238,9 +232,43 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewGoals"
-            android:layout_width="match_parent"
-            android:layout_height="385dp"
-            tools:ignore="MissingConstraints"
+            android:layout_width="363dp"
+            android:layout_height="318dp"
             tools:layout_editor_absoluteY="379dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout25"
+            android:layout_width="388dp"
+            android:layout_height="102dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginEnd="4dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/Market"
+                android:layout_width="76dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="55dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/marketplaceicon" />
+
+            <ImageView
+                android:id="@+id/Home"
+                android:layout_width="82dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/homeicon" />
+
+            <ImageView
+                android:id="@+id/Savings"
+                android:layout_width="76dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/savingsicon" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

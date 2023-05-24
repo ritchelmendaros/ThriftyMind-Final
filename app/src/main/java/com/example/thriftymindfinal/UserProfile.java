@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +24,7 @@ public class UserProfile extends AppCompatActivity {
     private EditText firstNameTextView;
     private EditText lastNameTextView;
     private EditText averageExpensesTextView;
+    private ImageView home, savings, marketplace;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -31,6 +34,46 @@ public class UserProfile extends AppCompatActivity {
 
         firstNameTextView = findViewById(R.id.FullName);
         averageExpensesTextView = findViewById(R.id.average);
+
+        home = (ImageView) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(UserProfile.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+//        marketplace = (ImageView) findViewById(R.id.Market);
+//        marketplace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(Dashboard.this, Marketplace.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
+        savings = (ImageView) findViewById(R.id.Savings);
+        savings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(UserProfile.this, Savings.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
