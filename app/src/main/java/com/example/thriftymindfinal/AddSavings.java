@@ -63,19 +63,19 @@ public class AddSavings extends AppCompatActivity {
                 finish();
             }
         });
-//        marketplace = (ImageView) findViewById(R.id.Market);
-//        marketplace.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = getIntent();
-//                String email = intent.getStringExtra("email");
-//
-//                Intent promptIntent = new Intent(Dashboard.this, Marketplace.class);
-//                promptIntent.putExtra("email", email);
-//                startActivity(promptIntent);
-//                finish();
-//            }
-//        });
+        marketplace = (ImageView) findViewById(R.id.Market);
+        marketplace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddSavings.this, Marketplace.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
         savings = (ImageView) findViewById(R.id.Savings);
         savings.setOnClickListener(new View.OnClickListener() {
             @Override

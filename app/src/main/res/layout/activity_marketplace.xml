@@ -6,20 +6,131 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg">
 
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="395dp"
+        android:layout_height="95dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/userprofile"
+                android:layout_width="55dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="0dp"
+                app:srcCompat="@drawable/user" />
+
+            <EditText
+                android:id="@+id/txtUser"
+                android:layout_width="117dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="211dp"
+                android:backgroundTint="@android:color/transparent"
+                android:fontFamily="@font/archivo"
+                android:fontStyle="normal"
+                android:letterSpacing="-0.01"
+                android:text="Hello, John!"
+                android:textColor="#CBE4DE"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="89dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="-325dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="239dp"
+                android:layout_marginBottom="662dp"
+                android:fontFamily="@font/archivo"
+                android:gravity="top"
+                android:letterSpacing="0.01"
+                android:lineHeight="8dp"
+                android:text="Goals"
+                android:textColor="#CBE4DE"
+                android:textSize="10sp"
+                android:textStyle="normal" />
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btnSaving"-->
+            <!--                android:layout_width="119dp"-->
+            <!--                android:layout_height="34dp"-->
+            <!--                android:layout_marginStart="-200dp"-->
+            <!--                android:layout_marginTop="0dp"-->
+            <!--                android:layout_marginEnd="48dp"-->
+            <!--                android:layout_marginBottom="662dp"-->
+            <!--                android:background="@drawable/textbackground"-->
+            <!--                android:text="Savings"-->
+            <!--                android:textSize="12dp"-->
+            <!--                app:backgroundTint="@color/border"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btnExpense"-->
+            <!--                android:layout_width="119dp"-->
+            <!--                android:layout_height="34dp"-->
+            <!--                android:layout_marginStart="-168dp"-->
+            <!--                android:layout_marginTop="40dp"-->
+            <!--                android:layout_marginEnd="48dp"-->
+            <!--                android:layout_marginBottom="662dp"-->
+            <!--                android:background="@drawable/textbackground"-->
+            <!--                android:text="Expenses"-->
+            <!--                android:textSize="12dp"-->
+            <!--                app:backgroundTint="@color/border"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <ImageView
+                android:id="@+id/logout"
+                android:layout_width="36dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="-80dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="660dp"
+                android:foreground="@drawable/logout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.986"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/archivo_bold"
+        android:fontFamily="@font/archivo"
         android:text="Marketplace"
         android:textColor="@color/icon_color_nav"
-        android:textSize="40sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/textView13"
@@ -29,12 +140,13 @@
         android:textColor="@color/icon_color_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -44,7 +156,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263">
+        app:layout_constraintVertical_bias="0.34">
 
         <!-- Card 1 -->
         <androidx.cardview.widget.CardView
@@ -52,7 +164,7 @@
             android:layout_height="209dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:cardCornerRadius="20dp"
+            android:background="@drawable/card_background"
             android:padding="16dp"
             app:cardBackgroundColor="#236061">
 
@@ -75,9 +187,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/archivo_bold"
+                    android:fontFamily="@font/archivo"
                     android:gravity="center"
-                    android:text="Nike Air Jordans"
+                    android:text="Nike Air Jordan"
                     android:textColor="@color/icon_color_nav"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -105,7 +217,7 @@
             android:layout_height="209dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:cardCornerRadius="20dp"
+            android:background="@drawable/card_background"
             android:padding="16dp"
             app:cardBackgroundColor="#236061">
 
@@ -126,7 +238,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/archivo_bold"
+                    android:fontFamily="@font/archivo"
                     android:gravity="center"
                     android:text="Nintendo Switch"
                     android:textColor="@color/icon_color_nav"
@@ -149,6 +261,164 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34">
+
+        <!-- Card 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="209dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            app:cardBackgroundColor="#236061">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Product 1 Image -->
+
+                <!-- Product 1 Title -->
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="134dp"
+                    android:gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bag" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo"
+                    android:gravity="center"
+                    android:text="Leather Satchel Bag"
+                    android:textColor="@color/icon_color_nav"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Product 1 Description -->
+
+                <!-- Product 1 Price -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo"
+                    android:gravity="center"
+                    android:text="Mandaue City, Cebu"
+                    android:textColor="@color/border"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 2 -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="209dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            app:cardBackgroundColor="#236061">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Product 2 Image -->
+                <!-- Product 2 Title -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="134dp"
+                    android:gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/laptop" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo"
+                    android:gravity="center"
+                    android:text="Macbook Laptop"
+                    android:textColor="@color/icon_color_nav"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!-- Product 2 Description -->
+
+                <!-- Product 2 Price -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/archivo"
+                    android:gravity="center"
+                    android:text="CIT University"
+                    android:textColor="@color/border"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout25"
+        android:layout_width="388dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout15"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/Market"
+            android:layout_width="76dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/marketplaceicon" />
+
+        <ImageView
+            android:id="@+id/Home"
+            android:layout_width="82dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/homeicon" />
+
+        <ImageView
+            android:id="@+id/Savings"
+            android:layout_width="76dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/savingsicon" />
     </LinearLayout>
 
 

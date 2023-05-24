@@ -59,15 +59,6 @@ public class Savings extends AppCompatActivity {
                 finish();
             }
         });
-        ImageView logout = (ImageView) findViewById(R.id.logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Savings.this, Login.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
 //        button = (Button) findViewById(R.id.btnExpenses);
 //        button.setOnClickListener(new View.OnClickListener() {
