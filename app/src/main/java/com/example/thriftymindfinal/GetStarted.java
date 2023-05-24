@@ -23,7 +23,7 @@ public class GetStarted extends AppCompatActivity {
                 Intent intent = getIntent();
                 String email = intent.getStringExtra("email");
 
-                Intent promptIntent = new Intent(GetStarted.this, Prompt.class);
+                Intent promptIntent = new Intent(GetStarted.this, Dashboard.class);
                 promptIntent.putExtra("email", email);
                 startActivity(promptIntent);
                 finish();

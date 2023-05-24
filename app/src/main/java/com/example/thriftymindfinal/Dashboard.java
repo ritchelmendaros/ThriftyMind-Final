@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -36,8 +37,9 @@ public class Dashboard extends AppCompatActivity {
     private List<Expense> expenses;
     private Button button;
     private EditText plannedbudget;
+    private ImageView userProfile, home, marketplace, savings;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,8 +52,47 @@ public class Dashboard extends AppCompatActivity {
         editor.putBoolean("isTipShown", false);
         editor.apply();
 
-        button = findViewById(R.id.btnSaving);
-        button.setOnClickListener(new View.OnClickListener() {
+        userProfile = (ImageView) findViewById(R.id.userprofile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Dashboard.this, UserProfile.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+        home = (ImageView) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(Dashboard.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+//        marketplace = (ImageView) findViewById(R.id.Market);
+//        marketplace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(Dashboard.this, Marketplace.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
+        savings = (ImageView) findViewById(R.id.Savings);
+        savings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = getIntent();
@@ -63,6 +104,20 @@ public class Dashboard extends AppCompatActivity {
                 finish();
             }
         });
+
+//        button = findViewById(R.id.btnSaving);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(Dashboard.this, Savings.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
         button = findViewById(R.id.btnGoal);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

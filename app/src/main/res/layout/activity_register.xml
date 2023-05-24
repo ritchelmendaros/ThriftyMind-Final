@@ -142,7 +142,7 @@
         android:background="@drawable/textbackground"
         android:ems="10"
         android:fontFamily="@font/inter"
-        android:hint="Email"
+        android:hint="Username"
         android:inputType="textEmailAddress"
         android:paddingStart="8dp"
         android:paddingTop="0dp"

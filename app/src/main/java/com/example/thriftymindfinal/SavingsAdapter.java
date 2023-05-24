@@ -42,7 +42,7 @@ public class SavingsAdapter extends RecyclerView.Adapter<SavingsAdapter.SavingsV
 
         // Set the values in the ViewHolder
         holder.tvSavingsName.setText(savingsName);
-        holder.tvSavedMoney.setText(String.format("₱%.2f", savedMoney));
+        holder.tvSavedMoney.setText("₱" + String.format("%.2f", savedMoney));
     }
 
     @Override

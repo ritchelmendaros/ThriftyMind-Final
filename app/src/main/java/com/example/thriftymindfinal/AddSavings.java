@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,15 +22,75 @@ public class AddSavings extends AppCompatActivity {
     private DatabaseReference savingsDatabaseReference;
     private EditText savingsNameEditText, savedMoneyEditText, totalSavedMoneyEditText;
     private String email, plannedBudget;
+    private ImageView userProfile, home, marketplace, savings;
     private Button button;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_savings);
 
-        button = findViewById(R.id.btnGoal);
+        // Retrieve email and planned budget values from the intent
+        Intent intent = getIntent();
+        email = intent.getStringExtra("email");
+        plannedBudget = intent.getStringExtra("plannedbudget");
+        EditText user = findViewById(R.id.txtUser);
+        user.setText("Hello " + email + "!");
+
+        home = (ImageView) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddSavings.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+        userProfile = (ImageView) findViewById(R.id.userprofile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddSavings.this, UserProfile.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+//        marketplace = (ImageView) findViewById(R.id.Market);
+//        marketplace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(Dashboard.this, Marketplace.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
+        savings = (ImageView) findViewById(R.id.Savings);
+        savings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddSavings.this, Savings.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+
+        button = (Button) findViewById(R.id.btnGoal);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,27 +103,6 @@ public class AddSavings extends AppCompatActivity {
                 finish();
             }
         });
-
-        button = findViewById(R.id.btnExpense);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = getIntent();
-                String email = intent.getStringExtra("email");
-
-                Intent promptIntent = new Intent(AddSavings.this, Dashboard.class);
-                promptIntent.putExtra("email", email);
-                startActivity(promptIntent);
-                finish();
-            }
-        });
-
-        // Retrieve email and planned budget values from the intent
-        Intent intent = getIntent();
-        email = intent.getStringExtra("email");
-        plannedBudget = intent.getStringExtra("plannedbudget");
-        EditText user = findViewById(R.id.txtUser);
-        user.setText("Hello " + email + "!");
 
         // Construct savings database reference
         savingsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("savings").child(email);

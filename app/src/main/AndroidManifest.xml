@@ -14,11 +14,15 @@
         android:theme="@style/Theme.ThriftyMindFinal"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".AddSavings"
             android:exported="false" />
         <activity
             android:name=".AddGoals"
             android:exported="false" />
+
         <activity
             android:name=".AddExpenses"
             android:exported="false" />

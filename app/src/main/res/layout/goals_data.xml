@@ -7,7 +7,7 @@
     app:cardBackgroundColor="@color/btnColor"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
-    app:contentPadding="10dp">
+    app:contentPadding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,16 +30,16 @@
             android:textSize="15sp"
             android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/btnRemoveGoal"
-            android:layout_width="130dp"
-            android:layout_height="38dp"
-            android:background="@drawable/textbackground"
-            android:text="Remove Goal"
-            android:textSize="13dp"
-            app:backgroundTint="@color/border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+<!--        <Button-->
+<!--            android:id="@+id/btnRemoveGoal"-->
+<!--            android:layout_width="130dp"-->
+<!--            android:layout_height="38dp"-->
+<!--            android:background="@drawable/textbackground"-->
+<!--            android:text="Remove Goal"-->
+<!--            android:textSize="13dp"-->
+<!--            app:backgroundTint="@color/border"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent" />-->
 
     </LinearLayout>
 

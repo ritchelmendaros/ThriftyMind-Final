@@ -2,11 +2,13 @@ package com.example.thriftymindfinal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -18,8 +20,11 @@ import com.google.firebase.database.ValueEventListener;
 public class AddExpenses extends AppCompatActivity {
     private DatabaseReference expensesDatabaseReference;
     private EditText nameofexpenses, user, budget, displayexp;
+    private ImageView userProfile, home, marketplace, savings;
+    private Button button;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +38,74 @@ public class AddExpenses extends AppCompatActivity {
         user.setText("Hello " + email + "!");
         displayexp = findViewById(R.id.txtplannedbudget);
         displayexp.setText(plannedBudget);
+
+        home = (ImageView) findViewById(R.id.Home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddExpenses.this, Dashboard.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+        userProfile = (ImageView) findViewById(R.id.userprofile);
+        userProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddExpenses.this, UserProfile.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+//        marketplace = (ImageView) findViewById(R.id.Market);
+//        marketplace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = getIntent();
+//                String email = intent.getStringExtra("email");
+//
+//                Intent promptIntent = new Intent(AddExpenses.this, Marketplace.class);
+//                promptIntent.putExtra("email", email);
+//                startActivity(promptIntent);
+//                finish();
+//            }
+//        });
+        savings = (ImageView) findViewById(R.id.Savings);
+        savings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddExpenses.this, Savings.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+
+        button = (Button) findViewById(R.id.btnGoals);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String email = intent.getStringExtra("email");
+
+                Intent promptIntent = new Intent(AddExpenses.this, AddGoals.class);
+                promptIntent.putExtra("email", email);
+                startActivity(promptIntent);
+                finish();
+            }
+        });
+
 
         // Construct expenses database reference
         expensesDatabaseReference = FirebaseDatabase.getInstance().getReference().child("expenses").child(email);
