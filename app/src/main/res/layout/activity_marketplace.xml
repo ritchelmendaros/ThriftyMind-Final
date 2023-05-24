@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/archivo_bold"
                     android:gravity="center"
-                    android:text="Nike Air Jordans"
+                    android:text="Nike Air Jordan"
                     android:textColor="@color/icon_color_nav"
                     android:textSize="20sp"
                     android:textStyle="bold" />
