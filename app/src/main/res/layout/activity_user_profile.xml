@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".UserProfile">
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="390dp"
+        android:layout_height="673dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="309dp"
+            android:layout_height="365dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/user_icon" />
+
+        <EditText
+            android:id="@+id/FullName"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginBottom="500dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="-0.01"
+            android:lineHeight="51dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#CBE4DE"
+            android:textSize="51sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/textview13"
+            android:layout_width="164dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="-470dp"
+            android:layout_marginEnd="257dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/archivo"
+            android:gravity="top"
+            android:letterSpacing="-0.01"
+            android:text="Average Expenses"
+            android:textColor="#CBE4DE"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/average"
+            android:layout_width="255dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginBottom="500dp"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="-0.01"
+            android:lineHeight="51dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#CBE4DE"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout13"
+        android:layout_width="389dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/Market"
+            android:layout_width="87dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/marketplaceicon" />
+
+        <ImageView
+            android:id="@+id/Home"
+            android:layout_width="103dp"
+            android:layout_height="98dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/homeicon" />
+
+        <ImageView
+            android:id="@+id/Savings"
+            android:layout_width="87dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/savingsicon" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
